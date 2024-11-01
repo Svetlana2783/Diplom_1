@@ -6,7 +6,7 @@ class Ingredient:
     """
 
     def __init__(self, ingredient_type: str, name: str, price: float):
-        self.type = ingredient_type
+        self.ingredient_type = ingredient_type
         self.name = name
         self.price = price
 
@@ -17,4 +17,4 @@ class Ingredient:
         return self.name
 
     def get_type(self) -> str:
-        return self.type
+        return self.ingredient_type
