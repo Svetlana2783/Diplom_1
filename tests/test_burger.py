@@ -69,6 +69,9 @@ class TestBurger:
     """Тест на удаление ингредиента с некорректным индексом."""
     def test_remove_ingredient_out_of_bounds(self):
         burger = Burger()
-        if len(burger.ingredients) > 0:
-            burger.remove_ingredient(0)  # Попытка удаления ингредиента с индексом 0, когда список пуст
-        assert len(burger.ingredients) == 0
+        try:
+            burger.remove_ingredient(0)
+        except IndexError:
+            assert True
+        else:
+            assert False, "Expected IndexError"
